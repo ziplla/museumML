@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 15
+names: ['archeology', 'document', 'dpi', 'graphics', 'mineralogy', 'natural_science_collection', 'numismatics', 'other', 'painting', 'photos_negatives', 'printed_products', 'rare_books', 'sculpture', 'technique', 'weapon']
+
+roboflow:
+  workspace: technocobras3
+  project: museum_3
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/technocobras3/museum_3/dataset/1
