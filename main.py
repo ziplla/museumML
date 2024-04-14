@@ -19,9 +19,13 @@ def upload_image():
 
     file.save('uploaded_image.jpg')
 
+    image = cv2.imread('uploaded_image.jpg')
+
+    image_res = cv2.resize(image, (520, 520))
+
     model = YOLO('runs/detect/yolov8s_v8_5e5/weights/best.pt')
 
-    results = model(['uploaded_image.jpg'])
+    results = model(image_res)
 
     type = -1
 
@@ -30,7 +34,7 @@ def upload_image():
         masks = result.masks
         keypoints = result.keypoints
         probs = result.probs
-        result.show()
+        # result.show()
         result.save(filename='static/result.jpg')
         # a = boxes.conf[0]
         if boxes:
